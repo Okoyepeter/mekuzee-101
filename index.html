@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <input type="checkbox" id="toggleMode">
+    <div class="app">
+        <div class="welcome">
+            <h1>Heyy There!</h1>
+            <p>This quiz contains 12 MCQs (Multiple Choice Questions). There can only be one answer, so choose your options wisely. We wish you best of luck 😎</p>
+
+            <div class="user-details">
+                <input type="text" placeholder="Enter your name" id="username-input">
+                <button id="start-btn">Start</button>
+            </div>
+        </div>
+
+        <div id="quiz">
+            <h1 id="question-count">Question 1</h1>
+            <p id="question">Some questions here</p>
+
+            <ul id="options">
+                <li><span>1</span>Option 1</li>
+                <li><span>2</span>Option 2</li>
+                <li><span>3</span>Option 3</li>
+                <li><span>4</span>Option 4</li>
+            </ul>
+
+            <div class="controls">
+                <button id="prev">&larr; Prev</button>
+                <button id="next">Next &rarr;</button>
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+
+        <div id="results-screen">
+            <h1 id="greetings">Good job, Myke!</h1>
+            <p>You scored</p>
+            <h2 id="score">6/12</h2>
+            <p>Thanks for participating</p>
+            <button>Retry &crarr;</button>
+        </div>
+    </div>
+
+    <label for="toggleMode">
+        <div class="indicator"></div>
+    </label>
+</body>
+</html>
+

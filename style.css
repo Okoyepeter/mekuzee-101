@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: 0.5s;
+}
+
+html, body {
+    height: 100%;
+}
+
+.app {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > input {
+    display: none;
+}
+
+body > label {
+    display: inline-block;
+    position: fixed;
+    width: 100px;
+    height: 50px;
+    background-color: #181818;
+    bottom: 50px;
+    right: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+body > label .indicator {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-color: #323232;
+    border-radius: 50%;
+    top: 2px;
+    left: 4px;
+    transition: 0.5s;
+}
+
+input:checked + .app {
+    background-color: #202020;
+    color: #eee;
+}
+
+input:checked + .app .user-details input {
+    background-color: transparent;
+    color: #58a3ee;
+}
+
+input:checked + .app #options li {
+    background-color: transparent;
+}
+
+input:checked + .app #options li.selected {
+    background-color: #3d4a45;
+}
+
+input:checked + .app .controls button#prev {
+    background-color: transparent;
+    color: #58a3ee;
+    border: 1px solid #58a3ee;
+}
+
+input:checked ~ label .indicator {
+    transform: translate(100%);
+}
+
+input:checked ~ .app #results-screen {
+    background-color: #202020;
+    color: #c7eee0;
+}
+
+.welcome {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+}
+
+.user-details {
+    margin: 20px 0px;
+}
+
+.user-details input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px dashed #bbb;
+    transition: 0.5s;
+}
+
+.user-details button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.user-details input:focus {
+    border-color: dodgerblue;
+    box-shadow: 0 0 15px #58a3ee;
+}
+
+.user-details button:active {
+    transform: scale(0.8);
+}
+
+.user-details button:disabled {
+    background-color: #a4b1b4;
+}
+
+.user-details button:disabled:active {
+    transform: none;
+}
+
+#quiz {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+}
+
+#quiz > p {
+    font-size: 18px;
+    padding: 10px 0px;
+    color: #719199;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#options li {
+    list-style: none;
+    transition: 0.5s;
+    background-color: #e4edf6;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed #a4b1b4;
+    cursor: pointer;
+}
+
+#options li:active {
+    transform: scale(0.9);
+}
+
+#options li.selected {
+    background-color: #c7eee0;
+    border-color: #69f5c2;
+    border-style: solid;
+    box-shadow: 0 0 10px #a0f8d8;
+}
+
+#options li span {
+    display: inline-block;
+    background-color: #7b8d9f;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    display: inline-grid;
+    place-content: center;
+    margin-right: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.controls button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: #7b8d9f;
+}
+
+.controls button#prev {
+    background-color: #d9e6f4;
+    color: #58a3ee;
+    border: 1px solid #58a3ee;
+}
+
+.controls button#next {
+    background-color: #58a3ee;
+    color: #fff;
+    border: 1px solid #58a3ee;
+}
+
+.controls button#submit {
+    background-color: mediumspringgreen;
+    color: white;
+    box-shadow: 0 0 15px #3bf6b2;
+    display: none;
+}
+
+#results-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 20%;
+    background-color: #fff;
+    gap: 2px;
+    color: #667685;
+    text-align: center;
+}
+
+#results-screen button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #3bf6b2;
+    box-shadow: 0 0 15px #69f5c2;
+    color: #fff;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#results-screen h2 {
+    font-size: 5em;
+}
